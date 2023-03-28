@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+application {
+    getMainClass().set('game.Main')
+}
+javafx {
+    version = "19"
+    modules = [ 'javafx.controls' ]
+}
+dependencies {
+    implementation 'org.openjfx:javafx:19'
+    implementation 'org.openjfx:javafx-controls:19'
+    implementation 'org.openjfx:javafx-base:19'
+    implementation 'org.openjfx:javafx-graphics:19'
+    implementation 'org.openjfx:javafx-fxml:19'
+    implementation 'org.openjfx:javafx-swing:19'
+    implementation 'org.openjfx:javafx-web:19'
+    implementation 'org.openjfx:javafx-media:19'
+}
+
+test {
+    useJUnitPlatform()
+}
