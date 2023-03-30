@@ -1,5 +1,4 @@
 package game.utils;
-import java.util.ArrayList;
 import java.util.Objects;
 public class Vector2D {
     public final int x;
@@ -9,9 +8,6 @@ public class Vector2D {
         this.x = x;
         this.y = y;
 
-    }
-    public String toString() {
-        return ("(" + this.x + "," + this.y + ")");
     }
 
     public boolean precedes(Vector2D other) {
@@ -33,18 +29,5 @@ public class Vector2D {
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
-    }
-
-    public final ArrayList<Vector2D> getNeighbourhood(){
-        ArrayList<Vector2D> neighbourhood = new ArrayList<>();
-        for(int i = -1;i<2;i++){
-            for(int j = -1;j<2;j++){
-                Vector2D v = new Vector2D(this.x + i, this.y + j);
-                if(i!=0 || j!=0){
-                    neighbourhood.add(v);
-                }
-            }
-        }
-        return neighbourhood;
     }
 }

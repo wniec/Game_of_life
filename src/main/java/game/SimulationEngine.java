@@ -3,7 +3,6 @@ package game;
 
 import game.gui.App;
 import game.utils.Vector2D;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -39,7 +38,7 @@ public class SimulationEngine implements Runnable{
     public void endSimulation() {
         this.endSim = true;
     }
-    public void runRound() {
+    private void runRound() {
         HashMap<Vector2D,Integer> cellDensity = map.getCellsDensity();
         ArrayList<Vector2D> newCells = map.getNewCells(cellDensity);
         ArrayList<Vector2D> deadCells = map.getDeadCells(cellDensity);
